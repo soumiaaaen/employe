@@ -1,0 +1,27 @@
+package controller; 
+import response.EmployeResponse; 
+import Service.EmployeService; 
+import org.springframework.beans.factory.annotation.Autowired; 
+import org.springframework.http.HttpStatus; 
+import org.springframework.http.ResponseEntity; 
+import org.springframework.web.bind.annotation.GetMapping; 
+import org.springframework.web.bind.annotation.PathVariable; 
+import org.springframework.web.bind.annotation.RestController; 
+ 
+@RestController 
+public class EmployeController { 
+ 
+    private final EmployeService employeService;
+
+    EmployeController(EmployeService employeService) {
+        this.employeService = employeService;
+    } 
+ 
+    @GetMapping("/employes/{id}") 
+    private ResponseEntity<EmployeResponse> 
+getEmployeDetails(@PathVariable("id") int id) { 
+        EmployeResponse employe = employeService.getEmployeById(id); 
+        return ResponseEntity.status(HttpStatus.OK).body(employe); 
+    } 
+} 
+ 
