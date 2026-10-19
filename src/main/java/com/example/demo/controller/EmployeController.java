@@ -1,6 +1,6 @@
-package controller; 
-import response.EmployeResponse; 
-import Service.EmployeService; 
+package com.example.demo.controller; 
+import com.example.demo.response.EmployeResponse; 
+import com.example.demo.service.EmployeService; 
 import org.springframework.beans.factory.annotation.Autowired; 
 import org.springframework.http.HttpStatus; 
 import org.springframework.http.ResponseEntity; 

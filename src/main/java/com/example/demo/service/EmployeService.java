@@ -1,14 +1,19 @@
+package com.example.demo.service;
+import org.springframework.stereotype.Service;
 
-import entite.Employe; 
-import response.EmployeResponse;
-import repository.EmployeRepo; 
+import com.example.demo.entite.Employe; 
+import com.example.demo.response.EmployeResponse;
+import com.example.demo.repository.EmployeRepo; 
 import org.modelmapper.ModelMapper; 
 import org.springframework.beans.factory.annotation.Autowired; 
 import java.util.Optional; 
  
+@Service
 public class EmployeService { 
-    private final EmployeRepo employeRepo; 
-    private final ModelMapper mapper;
+    @Autowired
+    private EmployeRepo employeRepo; 
+    @Autowired
+    private ModelMapper mapper;
 
     EmployeService(EmployeRepo employeRepo, ModelMapper mapper) {
         this.employeRepo = employeRepo;

@@ -1,3 +1,4 @@
+package com.example.demo.entite;
 
 import jakarta.persistence.*; 
 @Entity 

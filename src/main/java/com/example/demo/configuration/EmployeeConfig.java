@@ -1,9 +1,10 @@
+package com.example.demo.configuration;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import Service.EmployeService; 
+import com.example.demo.service.EmployeService; 
  
 @Configuration 
 public class EmployeeConfig { 
