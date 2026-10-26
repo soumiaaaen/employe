@@ -29,10 +29,10 @@
 	<properties>
 		<java.version>17</java.version> 
 		<jacoco.version>0.8.11</jacoco.version> 
-		<sonar.projectKey></sonar.projectKey> 
-		<sonar.organization></sonar.organization> 
+		<sonar.projectKey>soumiaaaen_employe</sonar.projectKey> 
+		<sonar.organization>soumiaaaen</sonar.organization> 
 		<sonar.host.url>https://sonarcloud.io</sonar.host.url> 
-		<sonar.java.binaries>target/classes</sonar.java.binaries> 
+		<sonar.java.binaries>target/classes</sonar.java.binaries>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -51,10 +51,16 @@
 		</dependency>
 
 		<dependency>
-			<groupId>com.mysql</groupId>
-			<artifactId>mysql-connector-j</artifactId>
-			<scope>runtime</scope>
+		    <groupId>com.mysql</groupId>
+		    <artifactId>mysql-connector-j</artifactId>
+		    <version>8.4.0</version>
+		    <scope>runtime</scope>
 		</dependency>
+		<dependency> 
+		    <groupId>org.jacoco</groupId> 
+		    <artifactId>jacoco-maven-plugin</artifactId> 
+		    <version>0.8.15</version> 
+		</dependency> 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa-test</artifactId>
@@ -71,6 +77,12 @@
 		    <artifactId>modelmapper</artifactId>
 		    <version>3.2.0</version>
 		</dependency>
+		
+		<dependency>
+		    <groupId>org.jacoco</groupId> 
+		    <artifactId>jacoco-maven-plugin</artifactId> 
+		    <version>0.8.15</version> 
+		</dependency> 
 	</dependencies>
 
 	<build>
@@ -79,6 +91,59 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
+			<plugin> 
+			    <groupId>org.jacoco</groupId> 
+			    <artifactId>jacoco-maven-plugin</artifactId> 
+			    <!-- 1. Mettre à jour vers la version supportant Java 25 --> 
+			    <version>0.8.15</version> 
+			    <executions> 
+			        <execution> 
+			            <id>prepare-agent</id> 
+			            <goals> 
+			                <goal>prepare-agent</goal> 
+			            </goals> 
+			        </execution> 
+			        <execution> 
+			            <id>report</id> 
+			            <phase>test</phase> 
+			            <goals> 
+			                <goal>report</goal> 
+			            </goals> 
+			        </execution> 
+			    </executions> 
+			</plugin> 
+			<plugin> 
+			    <groupId>org.sonarsource.scanner.maven</groupId> 
+			    <artifactId>sonar-maven-plugin</artifactId> 
+			    <version>3.10.0.2594</version> 
+			</plugin> 
+			<plugin>
+			    <groupId>org.jacoco</groupId> 
+			    <artifactId>jacoco-maven-plugin</artifactId> 
+			    <!-- 1. Mettre à jour vers la version supportant Java 25 --> 
+			    <version>0.8.15</version> 
+			    <executions> 
+			        <execution> 
+			            <id>prepare-agent</id> 
+			            <goals> 
+			                <goal>prepare-agent</goal> 
+			            </goals> 
+			        </execution> 
+			        <execution> 
+			            <id>report</id> 
+			            <phase>test</phase> 
+			            <goals> 
+			                <goal>report</goal> 
+			            </goals> 
+			        </execution> 
+			    </executions> 
+			</plugin>
+			<plugin>
+			    <groupId>org.sonarsource.scanner.maven</groupId> 
+			    <artifactId>sonar-maven-plugin</artifactId> 
+			    <version>3.10.0.2594</version> 
+			</plugin> 
+			
 		</plugins>
 	</build>
 
